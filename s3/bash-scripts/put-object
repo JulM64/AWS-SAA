@@ -1,1 +1,9 @@
 #!/usr/bin/env bash
+#where we store the files
+$OUTPUT_DIR="/tmp/s3/bash-scripts"
+#let's create output folder
+mkdir -p $OUTPUT_DIR
+#generate a random folder
+#determine how many file to create
+#generate a random number between 5-10
+num_files=$((RANDOM % 6 + 5))
