@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
+#Exit immediately when any commands returns a non-zero
+set -e
 #where we store the files
-$OUTPUT_DIR="/tmp/s3/bash-scripts"
+OUTPUT_DIR="/tmp/s3/bash-scripts"
+#remove folder if is already exit
+rm -r $OUTPUT_DIR
 #let's create output folder
 mkdir -p $OUTPUT_DIR
 #generate a random folder
-#determine how many file to create
+#to determine how many file to create
 #generate a random number between 5-10
-num_files=$((RANDOM % 6 + 5))
+NUM_FILES=$((RANDOM % 6 + 5))
+for((i=1;i<=NUM_FILES;i++));do
+  #generate a random filename
+  FILENAME="$OUTPUT_DIR/file_$i.txt"
+  #generate a random data and write it to the file
+  dd if=/dev/urandom of="$FILENAME" bs=1024 count=$((RANDOM % 1024 + 1)) 2>/dev/null
+  done  
+
+  tree $OUTPUT_DIR
