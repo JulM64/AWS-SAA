@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "List newest bucket"
+echo "..."
 #if you want to list top 5 of buckets sort by creation date
 aws s3api list-buckets | jq -r '.Buckets | sort_by(.CreationDate) | reverse | .[0] | .Name' 
 echo "..."
