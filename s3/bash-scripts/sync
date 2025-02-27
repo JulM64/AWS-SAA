@@ -10,7 +10,7 @@ if [ -z "$1" ]; then
 fi
 #check for a filename prefix
 if [ -z "$2" ]; then
-    echo "there needs to be a bucket name e.g. ./bucket my bucket-name"
+    echo "there needs to be a filename prefix e.g. ./bucket my bucket-name my filename-prefix"
     exit 1
 fi
 BUCKET_NAME=$1
@@ -33,4 +33,4 @@ for((i=1;i<=NUM_FILES;i++));do
 done  
 
   tree $OUTPUT_DIR
-  aws s3 sync $OUTPUT_DIR s3://BUCKET_NAME/files
+  aws s3 sync $OUTPUT_DIR s3://$BUCKET_NAME/files

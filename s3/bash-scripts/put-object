@@ -1,21 +1,13 @@
 #!/usr/bin/env bash
-#Exit immediately when any commands returns a non-zero
-set -e
-#where we store the files
-OUTPUT_DIR="/tmp/s3/bash-scripts"
-#remove folder if is already exit
-rm -r $OUTPUT_DIR
-#let's create output folder
-mkdir -p $OUTPUT_DIR
-#generate a random folder
-#to determine how many file to create
-#generate a random number between 5-10
-NUM_FILES=$((RANDOM % 6 + 5))
-for((i=1;i<=NUM_FILES;i++));do
-  #generate a random filename
-  FILENAME="$OUTPUT_DIR/file_$i.txt"
-  #generate a random data and write it to the file
-  dd if=/dev/urandom of="$FILENAME" bs=1024 count=$((RANDOM % 1024 + 1)) 2>/dev/null
-  done  
 
-  tree $OUTPUT_DIR
+echo "put-object"
+#check for a bucket name
+if [ -z "$1" ]; then
+    echo "there needs to be a bucket name e.g. ./bucket my bucket-name"
+    exit 1
+fi
+#check for a filename 
+if [ -z "$2" ]; then
+    echo "there needs to be a filename prefix e.g. ./bucket my bucket-name my filename-prefix"
+    exit 1
+fi
