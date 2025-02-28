@@ -8,6 +8,16 @@ if [ -z "$1" ]; then
 fi
 #check for a filename 
 if [ -z "$2" ]; then
-    echo "there needs to be a filename prefix e.g. ./bucket my bucket-name my filename-prefix"
+    echo "there needs to be a filename e.g. ./bucket my bucket-name my filename"
     exit 1
 fi
+
+BUCKET_NAME=$1
+FILENAME=$2
+
+OBJECT_KEY=$(basename "$FILENAME")
+
+aws s3api put-object \
+--bucket $BUCKET_NAME \
+--body $FILENAME \
+--key $OBJECT_KEY
