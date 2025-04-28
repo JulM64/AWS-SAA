@@ -1,6 +1,6 @@
 {
   "auth": {
-    "fileuploadapp29559041": {
+    "fileuploadapp8c7c3635": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -25,6 +25,13 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "storage": {
+    "s3file": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

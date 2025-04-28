@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "fileuploadapp29559041_identitypool_29559041",
+    "identityPoolName": "fileuploadapp8c7c3635_identitypool_8c7c3635",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "fileup29559041",
-    "userPoolName": "fileuploadapp29559041_userpool_29559041",
+    "resourceNameTruncated": "fileup8c7c3635",
+    "userPoolName": "fileuploadapp8c7c3635_userpool_8c7c3635",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "fileup29559041_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "fileup8c7c3635_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "29559041",
-    "resourceName": "fileuploadapp29559041",
+    "sharedId": "8c7c3635",
+    "resourceName": "fileuploadapp8c7c3635",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "usernameAttributes": [
